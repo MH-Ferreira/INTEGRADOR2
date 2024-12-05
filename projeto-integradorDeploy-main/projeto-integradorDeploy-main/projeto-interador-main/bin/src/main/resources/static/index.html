@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Filmes - MH Movie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 MH Movie</h1>
+            <p>Reserve seu filme favorito com facilidade.</p>
+        </header>
+
+        <!-- Formulário -->
+        <section class="form-container">
+            <form id="formReserva">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+
+                <label for="chave">Chave:</label>
+                <input type="text" id="chave" maxlength="4" required>
+
+                <label for="horario">Horário:</label>
+                <input type="time" id="horario" required>
+
+                <label for="novaFoto">Foto de Perfil:</label>
+                <input type="file" id="novaFoto" accept="image/*">
+
+                <button type="button" onclick="openFilmSelector()">Escolher Filme</button>
+                <button type="submit">Confirmar Reserva</button>
+            </form>
+        </section>
+
+        <!-- Modal de Filmes -->
+        <div id="filmSelectorModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Escolha um Filme</h2>
+                <div id="film-options">
+                    <button onclick="selectFilm('Filme A')">🎬 Filme A</button>
+                    <button onclick="selectFilm('Filme B')">🍿 Filme B</button>
+                    <button onclick="selectFilm('Filme C')">📽️ Filme C</button>
+                    <button onclick="selectFilm('Filme D')">🎥 Filme D</button>
+                </div>
+                <button onclick="closeFilmSelector()">Fechar</button>
+            </div>
+        </div>
+
+        <!-- Lista de Reservas -->
+        <section id="reservas" class="registro-list"></section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
